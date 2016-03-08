@@ -16,13 +16,14 @@ make
 
 ## Usage:
 
-```./radixSA [-L <lmerLength>] inputFile outputFile```
+```
+./radixSA [-L <lmerLength>] inputFile outputFile
 
 Where:
   -L: does L-mer sorting instead of suffix sorting; specify max value of L
   -w: force 64 bit indexes even for short strings (uses more memory)
   -h: print this help
-
+```
 
 ## To use as library:
 
