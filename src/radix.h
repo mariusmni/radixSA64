@@ -574,7 +574,8 @@ public:
         uint *charCode = &charCodeV[0];
 
         int bitsPerChar;
-        int alphaSize = indexAlphabet(originalInput, length, charCode, bitsPerChar);
+        //int alphaSize = 
+	indexAlphabet(originalInput, length, charCode, bitsPerChar);
         const int bitsPerFirstPass = 16;//(18 / bitsPerChar) * bitsPerChar;
 //        cout << "Alphabet size " << alphaSize << endl;
 //        << "(" << bitsPerChar << " bits per char) "<<""

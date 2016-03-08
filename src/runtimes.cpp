@@ -57,10 +57,10 @@ void printIntData(unum *data, unum n, const char *outputFile) {
 }
 
 void printHelp() {
-    cout << "Arguments: [-k <kmerLength>] inputFile outputFile" << endl;
+    cout << "Arguments: [-L <lmerLength>] inputFile outputFile" << endl;
     cout << "Where:" << endl;
-    cout << "  -k: does k-mer sorting instead of suffix sorting; specify max value of k" << endl;
-    cout << "  -w: force 64 bit indexes (uses more memory)" << endl;
+    cout << "  -L: does L-mer sorting instead of suffix sorting; specify max value of L" << endl;
+    cout << "  -w: force 64 bit indexes even for short strings (uses more memory)" << endl;
     cout << "  -h: print this help" << endl;
 }
 
@@ -74,7 +74,7 @@ void parseIntOrExit(char option, char *argument, long int *result) {
 void parseArgs(int argc, char **argv, long int &k, string& inputFile, string& outputFile,
         bool& use64Bit) {
     use64Bit = false;
-    for (int c; (c = getopt(argc, argv, "k:wh")) != -1;) {
+    for (int c; (c = getopt(argc, argv, "L:wh")) != -1;) {
         switch (c) {
         case 'h':
             printHelp();
@@ -82,7 +82,7 @@ void parseArgs(int argc, char **argv, long int &k, string& inputFile, string& ou
         case 'w':
             use64Bit = true;
             break;
-        case 'k':
+        case 'L':
             parseIntOrExit(c, optarg, &k);
             break;
         default:
@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
         freopen(buffer, "w", stdout);
 
         long k = 0;
-        int c = getopt(argc, argv, "k:");
+        int c = getopt(argc, argv, "L:");
         if (c != -1) {
             parseIntOrExit(c, optarg, &k);
             if (k < 0)

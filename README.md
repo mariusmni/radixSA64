@@ -14,17 +14,15 @@ Open a command line and type:
 make
 ```
 
-## To compute suffix array:
+## Usage:
 
-```
-./radixSA inputFile outputFile
-```
+```./radixSA [-L <lmerLength>] inputFile outputFile```
 
-## To compute L-mer array: 
+Where:
+  -L: does L-mer sorting instead of suffix sorting; specify max value of L
+  -w: force 64 bit indexes even for short strings (uses more memory)
+  -h: print this help
 
-```
-./radixSA -k <value> inputFile outputFile
-```
 
 ## To use as library:
 
