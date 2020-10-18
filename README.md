@@ -7,7 +7,7 @@ This program is based on the suffix array algorithm [RadixSA](https://github.com
 
 ## To compile:
 
-Make sure you have `g++`, `cmake` and `make` installed. 
+Make sure you have `g++`, `cmake` and `make` installed.
 Open a command line and type: 
 
 ```

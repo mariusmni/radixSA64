@@ -79,7 +79,7 @@ int bitsFor(unum n) {
 template<class unum>
 int logceil(unum n) {
     int bits = bitsFor(n);
-    if ((1L << (bits-1)) == n)
+    if ((unum)(1L << (bits-1)) == n)
         return bits-1;
     return bits;
 }
