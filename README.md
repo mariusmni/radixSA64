@@ -33,7 +33,7 @@ Where:
 ## To use as library:
 
 
-```
+```cpp
 #include "radix.h"
     
 unum *a = Radix<unum>(str, n).build();
